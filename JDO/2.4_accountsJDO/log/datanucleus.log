@@ -1,0 +1,42 @@
+28-10-16_00:46:35 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 5.0.3) for API "JDO"
+28-10-16_00:46:35 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\Flight.class" with enhanced definition
+28-10-16_00:46:35 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\Reservation.class" with enhanced definition
+28-10-16_00:46:35 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\User.class" with enhanced definition
+28-10-16_00:46:35 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 3 classes.
+28-10-16_00:46:40 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Deletion of the schema for classes
+28-10-16_00:46:40 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Classpath
+28-10-16_00:46:40 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\datanucleus-api-jdo-5.0.3.jar
+28-10-16_00:46:40 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\datanucleus-core-5.0.3.jar
+28-10-16_00:46:40 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\datanucleus-rdbms-5.0.3.jar
+28-10-16_00:46:40 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\javax.jdo-3.2.0-m5.jar
+28-10-16_00:46:40 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\log4j-1.2.14.jar
+28-10-16_00:46:40 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\mysql-connector-java-5.1.40-bin.jar
+28-10-16_00:46:40 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin
+28-10-16_00:46:40 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\resources
+28-10-16_00:46:41 (main) INFO  [DataNucleus.Persistence] - Property datanucleus.autocreateall unknown - will be ignored
+28-10-16_00:46:41 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Input Files
+28-10-16_00:46:41 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\Flight.class
+28-10-16_00:46:41 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\Reservation.class
+28-10-16_00:46:41 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\User.class
+28-10-16_00:46:42 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool completed successfully
+28-10-16_00:46:46 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 5.0.3) for API "JDO"
+28-10-16_00:46:47 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\Flight.class" with enhanced definition
+28-10-16_00:46:47 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\Reservation.class" with enhanced definition
+28-10-16_00:46:47 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\User.class" with enhanced definition
+28-10-16_00:46:47 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 3 classes.
+28-10-16_00:46:47 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Creation of the schema for classes
+28-10-16_00:46:47 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Classpath
+28-10-16_00:46:47 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\datanucleus-api-jdo-5.0.3.jar
+28-10-16_00:46:47 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\datanucleus-core-5.0.3.jar
+28-10-16_00:46:47 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\datanucleus-rdbms-5.0.3.jar
+28-10-16_00:46:47 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\javax.jdo-3.2.0-m5.jar
+28-10-16_00:46:47 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\log4j-1.2.14.jar
+28-10-16_00:46:47 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\lib\mysql-connector-java-5.1.40-bin.jar
+28-10-16_00:46:47 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin
+28-10-16_00:46:47 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\resources
+28-10-16_00:46:47 (main) INFO  [DataNucleus.Persistence] - Property datanucleus.autocreateall unknown - will be ignored
+28-10-16_00:46:48 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Input Files
+28-10-16_00:46:48 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\Flight.class
+28-10-16_00:46:48 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\Reservation.class
+28-10-16_00:46:48 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\DEV\Workspaces\JDO\2.4_accountsJDO\bin\es\deusto\ingenieria\sd\jdo\accounts\User.class
+28-10-16_00:46:58 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool completed successfully
