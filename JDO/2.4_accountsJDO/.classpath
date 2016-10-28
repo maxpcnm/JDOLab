@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" output="bin" path="src"/>
-	<classpathentry kind="var" path="JRE_LIB" rootpath="JRE_SRCROOT" sourcepath="JRE_SRC"/>
-	<classpathentry kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/datanucleus-api-jdo-5.0.3.jar"/>
-	<classpathentry kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/datanucleus-core-5.0.3.jar"/>
-	<classpathentry kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/datanucleus-rdbms-5.0.3.jar"/>
-	<classpathentry kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/javax.jdo-3.2.0-m5.jar"/>
-	<classpathentry kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/log4j-1.2.14.jar"/>
-	<classpathentry kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/mysql-connector-java-5.1.40-bin.jar"/>
-	<classpathentry kind="con" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/bin"/>
-	<classpathentry kind="con" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/resources"/>
+	<classpathentry exported="true" kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+	<classpathentry exported="true" kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/datanucleus-api-jdo-5.0.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/datanucleus-core-5.0.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/datanucleus-rdbms-5.0.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/javax.jdo-3.2.0-m5.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/log4j-1.2.14.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/lib/mysql-connector-java-5.1.40-bin.jar"/>
+	<classpathentry exported="true" kind="con" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/bin"/>
+	<classpathentry exported="true" kind="con" path="C:/DEV/Workspaces/JDO/2.4_accountsJDO/resources"/>
+	<classpathentry kind="lib" path="lib/datanucleus-api-jdo-5.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/datanucleus-core-5.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/datanucleus-rdbms-5.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/javax.jdo-3.2.0-m5.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.40-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

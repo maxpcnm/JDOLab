@@ -22,4 +22,20 @@ public class Reservation {
 		this.seats = seats;
 	}
 
+	public Reservation(int i, User user1, Flight flight1, int j) {
+		super();
+		this.reservationID = reservationID;
+		this.user = user;
+		this.flight = flight;
+		this.seats = seats;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 }
