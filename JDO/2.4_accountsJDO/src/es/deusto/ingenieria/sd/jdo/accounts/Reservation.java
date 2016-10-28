@@ -38,4 +38,28 @@ public class Reservation {
 		this.user = user;
 	}
 
+	public Long getReservationID() {
+		return reservationID;
+	}
+
+	public void setReservationID(Long reservationID) {
+		this.reservationID = reservationID;
+	}
+
+	public Flight getFlight() {
+		return flight;
+	}
+
+	public void setFlight(Flight flight) {
+		this.flight = flight;
+	}
+
+	public int getSeats() {
+		return seats;
+	}
+
+	public void setSeats(int seats) {
+		this.seats = seats;
+	}
+
 }

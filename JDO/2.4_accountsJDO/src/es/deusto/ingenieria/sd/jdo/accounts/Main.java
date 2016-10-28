@@ -20,13 +20,13 @@ public class Main {
 		User user2 = new User("roberto.carballedo@opendeusto.es", "sd2", "Roberto Carballedo");
 		
 
-		Flight flight1 = new Flight("AA6665", "Bilbao", "Hamburg", "AmericanAirlines", 200);
+		Flight flight1 = new Flight("AA6665", "Bilbao", "Hamburg", "AmericanAirlines", 193);
 		
-		Flight flight2 = new Flight("BA416", "Hamburg", "London", "British Airways", 250);
-		Flight flight3 = new Flight("LX317", "Hamburg",	"Brussels", "Lufthansa", 300);
+		Flight flight2 = new Flight("BA416", "Hamburg", "London", "British Airways", 246);
+		Flight flight3 = new Flight("LX317", "Hamburg",	"Brussels", "Lufthansa", 296);
 		
 
-		Reservation reservation1 = new Reservation(12345, user1, flight1, 4);
+		Reservation reservation1 = new Reservation(12345, user1, flight1, 3);
 		Reservation reservation2 = new Reservation(23456, user1, flight2, 4);
 		Reservation reservation3 = new Reservation(34567, user2, flight1, 4);
 		Reservation reservation4 = new Reservation(45678, user2, flight3, 4);
@@ -68,17 +68,14 @@ public class Main {
 			//End the transaction
 			tx.commit();			
 			System.out.println("  * Objects and their relationships have been stored!");
-			System.out.println("- Transferring $100");
-			System.out.println("    - " + account1.getBankName() + "($ " + account1.getBalance() + ")");
+			System.out.println("- Updating seats from 3 to 4 reservation ID ");
+			System.out.println("    - " + reservation1.getReservationID() + "(of user " + reservation1.getUser().getFullName() + ")");
 			
-			System.out.println("Open Date: " + account1.getOpenDate());
+			reservation1.setSeats(4);
+			Flight x = reservation1.getFlight();
+			x.setRemainingSeats(x.getRemainingSeats()-1);
+			System.out.println("  Seats updated!");
 			
-			System.out.println("    + " + account2.getBankName() + "($ " + account2.getBalance() + ")");
-			account1.debit(100);
-			account2.credit(100);
-			System.out.println("  * Money transferred!");
-			System.out.println("    - " + account1.getBankName() + "($ " + account1.getBalance() + ")");
-			System.out.println("    + " + account2.getBankName() + "($ " + account2.getBalance() + ")");
 		} catch (Exception ex) {
 			System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
 			ex.printStackTrace();
@@ -94,7 +91,7 @@ public class Main {
 		}
 		
 		try {
-			System.out.println("- Retrieving all the accounts using an 'Extent'...");			
+			System.out.println("- Retrieving all the reservations using an 'Extent'...");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -104,8 +101,8 @@ public class Main {
 		
 			Extent<Reservation> extent = pm.getExtent(Reservation.class, true);
 			
-			for (Reservation account : extent) {
-				System.out.println("  -> " + account);
+			for (Reservation reservation : extent) {
+				System.out.println("  -> " + reservation);
 			}
 			//Notice the change in the accounts' balances
 			//End the transaction
@@ -122,8 +119,11 @@ public class Main {
 			}
 		}
 
+		
+		
+
 		try {
-			System.out.println("- Retrieving accounts with balace > 200.0 using a 'Query'...");			
+			System.out.println("- Deleting Reservation 4 ...");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -132,47 +132,11 @@ public class Main {
 			tx.begin();
 
 			Query<Reservation> query = pm.newQuery(Reservation.class);
-			query.setFilter("balance > 200.0");
-			
 			@SuppressWarnings("unchecked")
-			List<Reservation> accounts = (List<Reservation>) query.execute();
-
-			//End the transaction
-			tx.commit();
+			List<Reservation> resultset = (List<Reservation>) query.execute();
 			
-			for (Reservation account : accounts) {
-				System.out.println("  -> " + account.getUser().getFullName() + " - " + account.getBankName());
-			}
-		} catch (Exception ex) {
-			System.err.println(" $ Error retrieving accounts using a 'Query': " + ex.getMessage());
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
+			resultset.remove(reservation4); //not sure yet whether this will work
 			
-			if (pm != null && !pm.isClosed()) {
-				pm.close();
-			}
-		}
-
-		try {
-			System.out.println("- Deleting 'User->Address' relation...");			
-			//Get the Persistence Manager
-			pm = pmf.getPersistenceManager();
-			//Obtain the current transaction
-			tx = pm.currentTransaction();		
-			//Start the transaction
-			tx.begin();
-
-			Query<User> query = pm.newQuery(User.class);
-			@SuppressWarnings("unchecked")
-			List<User> users = (List<User>) query.execute();
-			
-			for (User user : users) {
-				System.out.println("  -> Retrieved user: " + user.getFullName());
-				System.out.println("     + Removing user from the addresses ... ");
-				user.removeUserFromAddresses();
-			}
 			
 			//End the transaction
 			tx.commit();
@@ -188,40 +152,39 @@ public class Main {
 			}
 		}
 
-		try {
-			System.out.println("- Cleaning the DB...");			
-			//Get the Persistence Manager
-			pm = pmf.getPersistenceManager();
-			//Obtain the current transaction
-			tx = pm.currentTransaction();
-			//Start the transaction
-			tx.begin();
-			
-			//Delete users from DB
-			// As we are considering accounts as dependents on user - CASCADING BEHAVIOUR - ACCOUNTS DELETED
-			Query<User> query1 = pm.newQuery(User.class);
-			System.out.println(" * '" + query1.deletePersistentAll() + "' users and their accounts deleted from the DB.");
-			//Delete addresses from DB
-			Query<Flight> query2 = pm.newQuery(Flight.class);
-			System.out.println(" * '" + query2.deletePersistentAll() + "' addresses deleted from the DB.");
-			
-			//End the transaction
-			tx.commit();
-		} catch (Exception ex) {
-			System.err.println(" $ Error cleaning the DB: " + ex.getMessage());
-			ex.printStackTrace();
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-			
-			if (pm != null && !pm.isClosed()) {
-				pm.close();
-			}
+//		try {
+//			System.out.println("- Cleaning the DB...");			
+//			//Get the Persistence Manager
+//			pm = pmf.getPersistenceManager();
+//			//Obtain the current transaction
+//			tx = pm.currentTransaction();
+//			//Start the transaction
+//			tx.begin();
+//			
+//			//Delete users from DB
+//			// As we are considering accounts as dependents on user - CASCADING BEHAVIOUR - ACCOUNTS DELETED
+//			Query<User> query1 = pm.newQuery(User.class);
+//			System.out.println(" * '" + query1.deletePersistentAll() + "' users and their accounts deleted from the DB.");
+//			//Delete addresses from DB
+//			Query<Flight> query2 = pm.newQuery(Flight.class);
+//			System.out.println(" * '" + query2.deletePersistentAll() + "' addresses deleted from the DB.");
+//			
+//			//End the transaction
+//			tx.commit();
+//		} catch (Exception ex) {
+//			System.err.println(" $ Error cleaning the DB: " + ex.getMessage());
+//			ex.printStackTrace();
+//		} finally {
+//			if (tx != null && tx.isActive()) {
+//				tx.rollback();
+//			}
+//			
+//			if (pm != null && !pm.isClosed()) {
+//				pm.close();
+//			}
 		}
 		
 
 		System.out.println("End of the Datanucleus + JDO example");
 		System.out.println("====================================");	
-	}
-}
+	}}
